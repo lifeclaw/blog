@@ -2,7 +2,7 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://lifeclaw.github.com/blog
+url: http://blog.lifeclaw.com
 title: 雪泥鸿爪 
 subtitle: 记忆里剩下的全都是美好
 author: Joey Chou
@@ -15,7 +15,7 @@ simple_search: http://google.com/search
 date_format: "%Y年%m月%d日"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: /blog/atom.xml
+subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
 email: lifeclaw@gmail.com
@@ -25,10 +25,10 @@ email: lifeclaw@gmail.com
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /blog
+root: /
 permalink: /articles/:title/
 source: source
-destination: public/blog
+destination: public/
 plugins: plugins
 code_dir: downloads/code
 category_dir: categories
