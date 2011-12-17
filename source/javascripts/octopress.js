@@ -114,19 +114,19 @@ function renderDeliciousLinks(items) {
 }
 
 $.domReady(function() {
-  testFeatures();
+  /*testFeatures();
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
   getNav();
-  addSidebarToggler();
+  addSidebarToggler();*/
 });
 
 // iOS scaling bug fix
 // Rewritten version
 // By @mathias, @cheeaun and @jdalton
 // Source url: https://gist.github.com/901295
-(function(doc) {
+/*(function(doc) {
   var addEvent = 'addEventListener',
       type = 'gesturestart',
       qsa = 'querySelectorAll',
@@ -141,7 +141,7 @@ $.domReady(function() {
     scales = [0.25, 1.6];
     doc[addEvent](type, fix, true);
   }
-}(document));
+}(document)); */
 
 /*!	SWFObject v2.2 modified by Brandon Mathis to contain only what is necessary to dynamically embed flash objects
   * Uncompressed source in javascripts/libs/swfobject-dynamic.js

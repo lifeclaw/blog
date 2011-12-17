@@ -9,11 +9,11 @@ $link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
 
 // Main Section Colors
 $main-bg: #f8f8f8 !default;
-$page-bg: #252525 !default;
+$page-bg: none;
 $article-border: #eeeeee !default;
 
-$header-bg: #333 !default;
-$header-border: lighten($header-bg, 15) !default;
+$header-bg: none;
+$header-border: lighten(#333, 15) !default;
 $title-color: #f2f2f2 !default;
 $subtitle-color: #aaa !default;
 
@@ -23,8 +23,7 @@ $type-border: #ddd !default;
 
 /* Navigation */
 $nav-bg: #ccc !default;
-$nav-bg-front: image-url('noise.png');
-$nav-bg-back: linear-gradient(lighten($nav-bg, 8), $nav-bg, darken($nav-bg, 11));
+$nav-bg-x: none;
 $nav-color: darken($nav-bg, 38) !default;
 $nav-color-hover: darken($nav-color, 25) !default;
 $nav-placeholder: desaturate(darken($nav-bg, 10), 15) !default;
@@ -72,7 +71,8 @@ a {
 }
 
 html {
-  background: $page-bg image-url('line-tile.png') top left;
+  //background: url('http://3.web.qstatic.com/webqqpic/style/wallpaper/blue_glow.jpg') top center;
+  background: url("/images/main-bg.jpg") no-repeat fixed left top #000;
 }
 body {
   > div {
