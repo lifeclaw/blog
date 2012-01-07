@@ -1,12 +1,7 @@
 body > nav {
-  position: relative;
-  background-color: $nav-bg;
-  @include background($nav-bg-front, $nav-bg-back);
-  border: {
-    top: 1px solid $nav-border-top;
-    bottom: 1px solid $nav-border-bottom; }
-  padding-top: .35em;
-  padding-bottom: .35em;
+  //position: relative;
+  float: right;
+  padding-top: 18px;
   form {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
@@ -46,7 +41,6 @@ body > nav {
     }
     ul.subscription {
       margin-left: .8em;
-      float: right;
       li:last-child a { padding-right: 0; }
     }
     ul li {
@@ -71,7 +65,7 @@ body > nav {
       }
     }
     form {
-      float: right;
+      float: left;
       text-align: left;
       padding-left: .8em;
       width: $sidebar-width-medium - $pad-medium*2 - $sidebar-pad-medium + 20px;

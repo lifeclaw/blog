@@ -9,3 +9,7 @@ categories: Service
 <p>
 test
 </p>
+
+{% blockquote %}
+Last night I lay in bed looking up at the stars in the sky and I thought to myself, where the heck is the ceiling.
+{% endblockquote %}

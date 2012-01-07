@@ -1,4 +1,4 @@
-$max-width: 1200px !default;
+$max-width: 1280px !default;
 
 // Padding used for layout margins
 $pad-min: 18px !default;
@@ -48,7 +48,17 @@ body {
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
-  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
+  padding: 0 18px;
+  > header {
+    @extend .group;
+    font-size: $header-font-size;
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+  }
+  #main {
+    clear: both;
+  }
+  > header > nav, > footer, #content > article, #content > div > article, #content > div > section {
     @extend .group;
     padding-left: $pad-min;
     padding-right: $pad-min;
@@ -82,11 +92,6 @@ body {
       margin-right: $pad-wide;
     }
   }
-  > header {
-    font-size: $header-font-size;
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
-  }
 }
 
 #content { > div, > article { width: 100%; }}
@@ -111,19 +116,18 @@ aside.sidebar {
 .toggle-sidebar { &, .no-sidebar & { display: none; }}
 
 body.sidebar-footer {
-  @media only screen and (min-width: 750px) {
+  @media only screen and (min-width: 480px) {
     aside.sidebar{ @include collapse-sidebar; }
   }
   #content { margin-right: 0px; }
   .toggle-sidebar { display: none; }
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 480px) {
   body > header { font-size: $header-font-size; }
-}
-@media only screen and (min-width: 750px) {
   aside.sidebar { @include collapse-sidebar; }
 }
+
 @media only screen and (min-width: 768px) {
   body { -webkit-text-size-adjust: auto; }
   body > header { font-size: $header-font-size * 1.2; }
@@ -131,10 +135,12 @@ body.sidebar-footer {
     @extend .group;
     padding: 0;
     margin: 0 auto;
+    background: none;
   }
   #content {
     @extend .group;
-    margin-right: $sidebar-width-medium;
+    //margin-right: $sidebar-width-medium;
+    margin-right: 260px;
     position: relative;
     .no-sidebar & { margin-right: 0; border-right: 0; }
     .collapse-sidebar & { margin-right: 20px; }
@@ -174,6 +180,7 @@ body.sidebar-footer {
   aside.sidebar {
     width: $sidebar-width-wide - $sidebar-pad-wide*2;
     padding: 1.2em $sidebar-pad-wide $sidebar-pad-wide;
+    background: #fff;
     .collapse-sidebar & {
       padding: { left: $pad-wide; right: $pad-wide; }
       @extend .group;

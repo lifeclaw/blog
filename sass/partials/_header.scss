@@ -1,5 +1,8 @@
 body > header {
-  background: $header-bg;
+  background: none;
+  float:left;
+  width: 100%;
+  margin-right: -100%;
   h1 {
     display: inline-block;
     margin: 0;
@@ -14,5 +17,9 @@ body > header {
     font-size: 1em;
     color: $subtitle-color;
     font-weight: normal;
+  }
+  > hgroup {
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
