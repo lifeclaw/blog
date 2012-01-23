@@ -1,14 +1,4 @@
-$max-width: 1280px !default;
-
-// Padding used for body margins
-$bpad-min: 10px !default;
-$bpad-narrow: 15px !default;
-$bpad-medium: 25px !default;
-$bpad-wide: 35px !default;
-
-// Margin used for article margins
-$amar-narrow: 25px !default;
-$amar-wide: 35px !default;
+$max-width: 1200px !default;
 
 // Padding used for layout margins
 $pad-min: 18px !default;
@@ -58,32 +48,7 @@ body {
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
-
-  padding-left: $bpad-min;
-  padding-right: $bpad-min;
-  @media only screen and (min-width: 480px) {
-    padding-left: $bpad-narrow;
-    padding-right: $bpad-narrow;
-  }
-  @media only screen and (min-width: 768px) {
-    padding-left: $bpad-medium;
-    padding-right: $bpad-medium;
-  }
-  @media only screen and (min-width: 992px) {
-    padding-left: $bpad-wide;
-    padding-right: $bpad-wide;
-  }
-
-  > header {
-    @extend .group;
-    font-size: $header-font-size;
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
-  }
-  #main {
-    clear: both;
-  }
-  > header > nav, > footer, #content > article, #content > div > article, #content > div > section {
+  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
     @extend .group;
     padding-left: $pad-min;
     padding-right: $pad-min;
@@ -117,9 +82,17 @@ body {
       margin-right: $pad-wide;
     }
   }
+  > header {
+    font-size: $header-font-size;
+    padding-top: $header-padding-top;
+    padding-bottom: $header-padding-bottom;
+  }
 }
 
-#content { > div, > article { width: 100%; }}
+#content {
+  overflow: hidden;
+  > div, > article { width: 100%; }
+}
 
 aside.sidebar {
   float: none;
@@ -141,18 +114,19 @@ aside.sidebar {
 .toggle-sidebar { &, .no-sidebar & { display: none; }}
 
 body.sidebar-footer {
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 750px) {
     aside.sidebar{ @include collapse-sidebar; }
   }
   #content { margin-right: 0px; }
   .toggle-sidebar { display: none; }
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 550px) {
   body > header { font-size: $header-font-size; }
+}
+@media only screen and (min-width: 750px) {
   aside.sidebar { @include collapse-sidebar; }
 }
-
 @media only screen and (min-width: 768px) {
   body { -webkit-text-size-adjust: auto; }
   body > header { font-size: $header-font-size * 1.2; }
@@ -160,12 +134,11 @@ body.sidebar-footer {
     @extend .group;
     padding: 0;
     margin: 0 auto;
-    background: none;
   }
   #content {
     @extend .group;
-    //margin-right: $sidebar-width-medium;
-    margin-right: 260px;
+    overflow: visible;
+    margin-right: $sidebar-width-medium;
     position: relative;
     .no-sidebar & { margin-right: 0; border-right: 0; }
     .collapse-sidebar & { margin-right: 20px; }
@@ -173,10 +146,6 @@ body.sidebar-footer {
       padding-top: $pad-medium/2;
       padding-bottom: $pad-medium/2;
       float: left;
-    }
-    > article {
-        margin-right: $amar-narrow;
-        margin-bottom: $amar-narrow;
     }
   }
   aside.sidebar {
@@ -209,16 +178,11 @@ body.sidebar-footer {
   aside.sidebar {
     width: $sidebar-width-wide - $sidebar-pad-wide*2;
     padding: 1.2em $sidebar-pad-wide $sidebar-pad-wide;
-    background: #fff;
     .collapse-sidebar & {
       padding: { left: $pad-wide; right: $pad-wide; }
       @extend .group;
     }
   }
-    article {
-        margin-right: $amar-wide;
-        margin-bottom: $amar-wide;
-    }
 }
 
 @if $indented-lists == false {
