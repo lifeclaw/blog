@@ -1,8 +1,5 @@
 article {
   padding-top: 1em;
-  background: #e5e5e5;
-  background:rgba(255,255,255, .08);
-  margin: 0 1em 1em 0;
   a { @extend .force-wrap; }
   header {
     position: relative;

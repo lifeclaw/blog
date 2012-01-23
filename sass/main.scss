@@ -1,6 +1,7 @@
 @import "compass";
-@include global-reset;
-@include reset-html5;
+//@include global-reset;
+//@include reset-html5;
+@import "normalize";
 
 @import "custom/colors";
 @import "custom/fonts";
@@ -8,3 +9,4 @@
 @import "base";
 @import "partials";
 @import "custom/styles";
+@import "print";

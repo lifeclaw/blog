@@ -1,5 +1,15 @@
 $max-width: 1280px !default;
 
+// Padding used for body margins
+$bpad-min: 10px !default;
+$bpad-narrow: 15px !default;
+$bpad-medium: 25px !default;
+$bpad-wide: 35px !default;
+
+// Margin used for article margins
+$amar-narrow: 25px !default;
+$amar-wide: 35px !default;
+
 // Padding used for layout margins
 $pad-min: 18px !default;
 $pad-narrow: 25px !default;
@@ -48,7 +58,22 @@ body {
   max-width: $max-width;
   position: relative;
   margin: 0 auto;
-  padding: 0 18px;
+
+  padding-left: $bpad-min;
+  padding-right: $bpad-min;
+  @media only screen and (min-width: 480px) {
+    padding-left: $bpad-narrow;
+    padding-right: $bpad-narrow;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-left: $bpad-medium;
+    padding-right: $bpad-medium;
+  }
+  @media only screen and (min-width: 992px) {
+    padding-left: $bpad-wide;
+    padding-right: $bpad-wide;
+  }
+
   > header {
     @extend .group;
     font-size: $header-font-size;
@@ -149,6 +174,10 @@ body.sidebar-footer {
       padding-bottom: $pad-medium/2;
       float: left;
     }
+    > article {
+        margin-right: $amar-narrow;
+        margin-bottom: $amar-narrow;
+    }
   }
   aside.sidebar {
     @extend .group;
@@ -186,6 +215,10 @@ body.sidebar-footer {
       @extend .group;
     }
   }
+    article {
+        margin-right: $amar-wide;
+        margin-bottom: $amar-wide;
+    }
 }
 
 @if $indented-lists == false {
