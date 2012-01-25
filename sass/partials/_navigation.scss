@@ -1,12 +1,14 @@
 body > nav {
   position: relative;
   background-color: $nav-bg;
-  @include background($nav-bg-front, $nav-bg-back);
+  // @include background($nav-bg-front, $nav-bg-back);
   border: {
     top: 1px solid $nav-border-top;
+    left: 1px solid $nav-border-left;
+    right: 1px solid $nav-border-right;
     bottom: 1px solid $nav-border-bottom; }
-  padding-top: .35em;
-  padding-bottom: .35em;
+  padding-top: .5em;
+  padding-bottom: .5em;
   form {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
@@ -16,7 +18,7 @@ body > nav {
       @extend .sans;
       line-height: 1.1em;
       width: 95%;
-      @include border-radius(.5em);
+      // @include border-radius(.5em);
       @include background-clip(padding-box);
       @include box-shadow(lighten($nav-bg, 2) 0 1px);
       background-color: lighten($nav-bg, 15);
@@ -31,8 +33,9 @@ body > nav {
       }
     }
   }
-  fieldset[role=search]{ float: right; width: 48%; }
+  fieldset[role=search]{ float: right; width: 48%; border:none; padding: 2px 0 0 0;}
   fieldset.mobile-nav{ float: left; width: 48%;
+    border: none; padding: 2px 0 0 0;
     select{ width: 100%; font-size: .8em; border: 1px solid #888;}
   }
   ul { display: none; }

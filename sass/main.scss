@@ -1,4 +1,6 @@
 @import "compass";
+
+// use normalize to replace reset.
 //@include global-reset;
 //@include reset-html5;
 @import "normalize";
@@ -9,4 +11,6 @@
 @import "base";
 @import "partials";
 @import "custom/styles";
+
+// embbed print css
 @import "print";

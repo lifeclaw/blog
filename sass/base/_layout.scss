@@ -128,12 +128,12 @@ body.sidebar-footer {
   aside.sidebar { @include collapse-sidebar; }
 }
 @media only screen and (min-width: 768px) {
-  body { -webkit-text-size-adjust: auto; }
+  body { -webkit-text-size-adjust: auto; padding: 0 10px; }
   body > header { font-size: $header-font-size * 1.2; }
   #main {
     @extend .group;
     padding: 0;
-    margin: 0 auto;
+    margin: 0 10px;
   }
   #content {
     @extend .group;
