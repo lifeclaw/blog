@@ -137,3 +137,36 @@ body > nav {
   a[rel=subscribe-rss]{ @include mask-subscription-nav('rss.png'); }
   a[rel=subscribe-email]{ @include mask-subscription-nav('email.png'); }
 }
+
+div.leftcorner {
+    height: 0;
+    width: 0;
+}
+div.rightcorner {
+    height: 0;
+    width: 0;
+}
+@media only screen and (min-width: 768px) {
+    div.leftcorner {
+        position: absolute;
+        top: 42px;
+        left: -1px;
+        border-left: 7px solid $page-bg;
+        border-top: 8px solid #EEE;
+    }
+    div.rightcorner {
+        position: absolute;
+        top: 42px;
+        right: -1px;
+        border-right: 7px solid $page-bg;
+        border-top: 8px solid #EEE;
+    }
+}
+@media only screen and (min-width: 992px) {
+    div.leftcorner {
+        top: 48px;
+    }
+    div.rightcorner {
+        top: 48px;
+    }
+}
