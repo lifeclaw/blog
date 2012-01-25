@@ -75,7 +75,7 @@ aside.sidebar {
       font-size: 1.2em;
       line-height: 1.1em;
       padding-bottom: .15em;
-      @include border-bottom-right-radius(.3em);
+      //@include border-bottom-right-radius(.3em);
       text-align: center;
       background: $main-bg $noise-bg;
       border-bottom: 1px solid $sidebar-border;

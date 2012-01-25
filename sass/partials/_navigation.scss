@@ -33,9 +33,8 @@ body > nav {
       }
     }
   }
-  fieldset[role=search]{ float: right; width: 48%; border:none; padding: 2px 0 0 0;}
+  fieldset[name=search]{ float: right; width: 48%;}
   fieldset.mobile-nav{ float: left; width: 48%;
-    border: none; padding: 2px 0 0 0;
     select{ width: 100%; font-size: .8em; border: 1px solid #888;}
   }
   ul { display: none; }
@@ -89,7 +88,7 @@ body > nav {
       .search { width: 91%; }
     }
     fieldset.mobile-nav { display: none; }
-    fieldset[role=search]{ width: 99%; }
+    fieldset[name=search]{ width: 99%; }
   }
   @media only screen and (min-width: 992px) {
     form {
@@ -134,8 +133,8 @@ body > nav {
     }
   }
   ul.subscription { position: relative; top: .2em; li, a { border: 0; padding: 0; }}
-  a[rel=subscribe-rss]{ @include mask-subscription-nav('rss.png'); }
-  a[rel=subscribe-email]{ @include mask-subscription-nav('email.png'); }
+  a.subscribe-rss { @include mask-subscription-nav('rss.png'); }
+  a.subscribe-email { @include mask-subscription-nav('email.png'); }
 }
 
 div.leftcorner {
