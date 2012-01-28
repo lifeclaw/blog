@@ -1,6 +1,6 @@
-/*.side-shadow-border {
+.side-shadow-border {
   @include box-shadow(lighten($sidebar-bg, 5) 0 1px);
-}*/
+}
 aside.sidebar {
   overflow: hidden;
   color: $sidebar-color;
@@ -24,7 +24,7 @@ aside.sidebar {
   img {
     @extend .flex-content;
     @extend .basic-alignment;
-    // @include shadow-box($border: #fff .3em solid);
+    @include shadow-box($border: #fff .3em solid);
   }
   ul {
     margin-bottom: 0.5em;
@@ -42,7 +42,7 @@ aside.sidebar {
   }
   a {
     color: inherit;
-    // @include transition(color .5s);
+    @include transition(color .5s);
   }
   &:hover a {
     color: $sidebar-link-color;
@@ -67,7 +67,7 @@ aside.sidebar {
     cursor: pointer;
     &:hover {
       background: mix($sidebar-border, $sidebar-bg);
-      // @include background(linear-gradient(left, rgba($sidebar-border, .5), rgba($sidebar-border, 0)));
+      @include background(linear-gradient(left, rgba($sidebar-border, .5), rgba($sidebar-border, 0)));
     }
     &:after {
       position: absolute; right: -11px; top: 0;
@@ -75,7 +75,7 @@ aside.sidebar {
       font-size: 1.2em;
       line-height: 1.1em;
       padding-bottom: .15em;
-      //@include border-bottom-right-radius(.3em);
+      @include border-bottom-right-radius(.3em);
       text-align: center;
       background: $main-bg $noise-bg;
       border-bottom: 1px solid $sidebar-border;

@@ -87,6 +87,9 @@ body {
     padding-top: $header-padding-top;
     padding-bottom: $header-padding-bottom;
   }
+  #main {
+    border-bottom: none;
+  }
 }
 
 #content {
@@ -121,18 +124,15 @@ body.sidebar-footer {
   .toggle-sidebar { display: none; }
 }
 
-#main {
-    border: none;
-}
-
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 320px) {
+  body { padding: 0 5px; }
   body > header { font-size: $header-font-size; }
 }
 @media only screen and (min-width: 750px) {
   aside.sidebar { @include collapse-sidebar; }
 }
 @media only screen and (min-width: 768px) {
-  body { -webkit-text-size-adjust: auto; padding: 0 10px; }
+  body { -webkit-text-size-adjust: auto; }
   body > header { font-size: $header-font-size * 1.2; }
   #main {
     @extend .group;

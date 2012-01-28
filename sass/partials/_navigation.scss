@@ -1,14 +1,14 @@
 body > nav {
   position: relative;
   background-color: $nav-bg;
-  // @include background($nav-bg-front, $nav-bg-back);
+  //@include background($nav-bg-front, $nav-bg-back);
   border: {
     top: 1px solid $nav-border-top;
-    left: 1px solid $nav-border-left;
-    right: 1px solid $nav-border-right;
-    bottom: 1px solid $nav-border-bottom; }
-  padding-top: .5em;
-  padding-bottom: .5em;
+    left: 1px solid $nav-border-top;
+    right: 1px solid $nav-border-top;
+    bottom: 1px solid lighten($nav-border-bottom, 50); }
+  padding-top: .35em;
+  padding-bottom: .35em;
   form {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
@@ -18,22 +18,22 @@ body > nav {
       @extend .sans;
       line-height: 1.1em;
       width: 95%;
-      // @include border-radius(.5em);
+      @include border-radius(.5em);
       @include background-clip(padding-box);
-      @include box-shadow(lighten($nav-bg, 2) 0px 1px);
+      @include box-shadow(lighten($nav-bg, 2) 0 1px);
       background-color: lighten($nav-bg, 15);
       border: 1px solid $nav-border;
       color: #888;
       &:focus {
         color: #444;
         border-color: #80b1df;
-        @include box-shadow(#80b1df 0px 0px 4px, #80b1df 0px 0px 3px inset);
+        @include box-shadow(#80b1df 0 0 4px, #80b1df 0 0 3px inset);
         background-color: #fff;
         outline: none;
       }
     }
   }
-  fieldset[name=search]{ float: right; width: 48%;}
+  fieldset[role=search]{ float: right; width: 48%; }
   fieldset.mobile-nav{ float: left; width: 48%;
     select{ width: 100%; font-size: .8em; border: 1px solid #888;}
   }
@@ -88,7 +88,27 @@ body > nav {
       .search { width: 91%; }
     }
     fieldset.mobile-nav { display: none; }
-    fieldset[name=search]{ width: 99%; }
+    fieldset[role=search]{ width: 99%; }
+  }
+  @media only screen and (min-width: 992px) {
+    #navcornerleft {
+      border-left: 7px solid $page-bg;
+      border-top: 5px solid #EEE;
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 42px;
+      left: -1px;
+    }
+    #navcornerright {
+      border-right: 7px solid $page-bg;
+      border-top: 5px solid #EEE;
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 42px;
+      right: -1px;
+    }
   }
   @media only screen and (min-width: 992px) {
     form {
@@ -133,39 +153,6 @@ body > nav {
     }
   }
   ul.subscription { position: relative; top: .2em; li, a { border: 0; padding: 0; }}
-  a.subscribe-rss { @include mask-subscription-nav('rss.png'); }
-  a.subscribe-email { @include mask-subscription-nav('email.png'); }
-}
-
-div.leftcorner {
-    height: 0;
-    width: 0;
-}
-div.rightcorner {
-    height: 0;
-    width: 0;
-}
-@media only screen and (min-width: 768px) {
-    div.leftcorner {
-        position: absolute;
-        top: 42px;
-        left: -1px;
-        border-left: 7px solid $page-bg;
-        border-top: 8px solid #EEE;
-    }
-    div.rightcorner {
-        position: absolute;
-        top: 42px;
-        right: -1px;
-        border-right: 7px solid $page-bg;
-        border-top: 8px solid #EEE;
-    }
-}
-@media only screen and (min-width: 992px) {
-    div.leftcorner {
-        top: 48px;
-    }
-    div.rightcorner {
-        top: 48px;
-    }
+  a[rel=subscribe-rss]{ @include mask-subscription-nav('rss.png'); }
+  a[rel=subscribe-email]{ @include mask-subscription-nav('email.png'); }
 }

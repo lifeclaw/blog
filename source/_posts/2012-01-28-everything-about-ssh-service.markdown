@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Everything About SSH Service"
+title: "所有关于SSH的一切"
 date: 2012-01-28 14:07
 comments: true
 categories: [Service, SSH]
