@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Everything About SSH Service"
-date: 2011-06-10 16:16
+date: 2012-01-28 14:07
 comments: true
-categories: [Service, SSH, Linux]
+categories: [Service, SSH]
 ---
 
 SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。在维基百科上，有<a href="http://zh.wikipedia.org/wiki/SSH" target="_blank">关于SSH的详细词条</a>，但通俗点说，SSH能够让一个客户端安全的登录上一个服务器上进行管理操作。所以，忘掉FTP、POP和Telnet吧，专心来爱SSH。
