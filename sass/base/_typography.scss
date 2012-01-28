@@ -43,7 +43,7 @@ h1 {
 
 #{headings()}{
   @extend .heading;
-  text-rendering: optimizelegibility;
+  //text-rendering: optimizelegibility;
   margin-bottom: 1em;
   font-weight: bold;
 }
@@ -112,10 +112,10 @@ blockquote {
   font-size: 1.2em;
   line-height: 1.5em;
   padding-left: 1em;
-  border-left: 4px solid rgba($text-color-light, .5);
+  border-left: 4px solid $text-color-light;
   cite {
     font-style: italic;
-    a { color: $text-color-light !important; word-wrap: break-word; }
+    a { color: $text-color-light !important; /*word-wrap: break-word;*/ }
     &:before { content: '\2014'; padding:{right: .3em; left: .3em;} color: $text-color-light; }
   }
   @media only screen and (min-width: 992px) {
@@ -157,5 +157,5 @@ blockquote {
   white-space: -pre-wrap;
   white-space: -o-pre-wrap;
   white-space: pre-wrap;
-  word-wrap: break-word;
+  /*word-wrap: break-word;*/
 }

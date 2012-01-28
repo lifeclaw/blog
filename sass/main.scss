@@ -1,9 +1,9 @@
 @import "compass";
 
 // use normalize to replace reset.
-@include global-reset;
-@include reset-html5;
-//@import "normalize";
+//@include global-reset;
+//@include reset-html5;
+@import "normalize";
 
 @import "custom/colors";
 @import "custom/fonts";
@@ -13,4 +13,4 @@
 @import "custom/styles";
 
 // embbed print css
-// @import "print";
+@import "print";

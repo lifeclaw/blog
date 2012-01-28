@@ -67,9 +67,9 @@ a {
 aside.sidebar a {
   @include link-colors($sidebar-link-color, $hover: $sidebar-link-color-hover, $focus: $sidebar-link-color-hover, $active: $sidebar-link-color-active);
 }
-a {
-  @include transition(color .3s);
-}
+//a {
+//  @include transition(color .3s);
+//}
 
 html {
   background: $page-bg image-url('line-tile.png') top left;
