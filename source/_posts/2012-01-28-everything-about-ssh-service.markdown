@@ -6,9 +6,9 @@ comments: true
 categories: [Service, SSH]
 ---
 
-SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。在维基百科上，有<a href="http://zh.wikipedia.org/wiki/SSH" target="_blank">关于SSH的详细词条</a>，但通俗点说，SSH能够让一个客户端安全的登录上一个服务器上进行管理操作。所以，忘掉FTP、POP和Telnet吧，专心来爱SSH。
+　　SSH为Secure Shell的缩写，由IETF的网络工作小组（Network Working Group）所制定；SSH为创建在应用层和传输层基础上的安全协议。在维基百科上，有<a href="http://zh.wikipedia.org/wiki/SSH" target="_blank">关于SSH的详细词条</a>，但通俗点说，SSH能够让一个客户端安全的登录上一个服务器上进行管理操作。所以，忘掉FTP、POP和Telnet吧，专心来爱SSH。
 
-让我们从最基础的部分开始，首先假定我们有台Macbook，然后想登录上一台Ubuntu服务器进行管理操作，那么首先要求Ubuntu服务器上 安装了SSH服务。SSH服务最早是由芬兰的一家公司开发，现在已经发展到SSH2版本，但由于版权和加密算法等因素的影响，很多人开始转用 OpenSSH，听这名字，就知道它是开源和免费的。
+　　让我们从最基础的部分开始，首先假定我们有台Macbook，然后想登录上一台Ubuntu服务器进行管理操作，那么首先要求Ubuntu服务器上 安装了SSH服务。SSH服务最早是由芬兰的一家公司开发，现在已经发展到SSH2版本，但由于版权和加密算法等因素的影响，很多人开始转用 OpenSSH，听这名字，就知道它是开源和免费的。
 {% blockquote %}
 以下所有操作都需要具备root权限的账号，通常我们不太建议在服务器上直接登录为root，所以一般会登录为普通用户，然后通过在命令前面加上sudo来获取root权限。
 {% endblockquote %}
@@ -22,17 +22,16 @@ sudo apt-get install openssh-server
 {% endcodeblock %}
 C.Ubuntu会帮我们解决一切依赖关系问题并且安装好OpenSSH服务，接下来可以做一些配置来实现更快更安全的目的具体的修改可以参见<a href="http://wiki.ubuntu.org.cn/OpenSSH%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B" target="_blank">Ubuntu OpenSSH高级教程</a>。
 
-
-至此安装已经结束了，下面我们可以从Macbook上登录试试，假设Ubuntu上存在一个用户tester。在Macbook上选择应用程序 – 实用工具 – 终端，然后在打开的终端里面输入
+　　至此安装已经结束了，下面我们可以从Macbook上登录试试，假设Ubuntu上存在一个用户tester。在Macbook上选择应用程序 – 实用工具 – 终端，然后在打开的终端里面输入
 {% codeblock lang:bash %}
 #注意这里S_IP是服务器的真实IP地址
 ssh tester@S_IP
 {% endcodeblock %}
 然后就会问你test的密码，输入密码就可以成功登录进行操作了。
 
-每次都输入密码会很烦，而且也不安全，同时还有其他一些潜在的风险，所以SSH也提供基于密钥的认证机制，你必须为自己创建一对密钥，并把公钥放在 需要访问的服务器上。客户端软件会向服务器发出请求，请求用你的私匙进行安全验证。服务器收到请求之后，先在你在该服务器的用户根目录下寻找你的公钥，然 后把它和你发送过来的公钥进行比较。如果两个密钥一致，服务器就用公有密钥加密“质询”（challenge）并把它发送给客户端软件。从而避免被“中间 人”攻击。
+　　每次都输入密码会很烦，而且也不安全，同时还有其他一些潜在的风险，所以SSH也提供基于密钥的认证机制，你必须为自己创建一对密钥，并把公钥放在 需要访问的服务器上。客户端软件会向服务器发出请求，请求用你的私匙进行安全验证。服务器收到请求之后，先在你在该服务器的用户根目录下寻找你的公钥，然 后把它和你发送过来的公钥进行比较。如果两个密钥一致，服务器就用公有密钥加密“质询”（challenge）并把它发送给客户端软件。从而避免被“中间 人”攻击。
 
-由于之前所说的原因，会出现一种蛋疼的情况，有些公司还喜欢使用SSH2版本的SSH服务，SSH2和OpenSSH的加密算法是完全不一样的，他们所使用的的密钥对也不兼容，所以会出现下面4种组合
+　　由于之前所说的原因，会出现一种蛋疼的情况，有些公司还喜欢使用SSH2版本的SSH服务，SSH2和OpenSSH的加密算法是完全不一样的，他们所使用的的密钥对也不兼容，所以会出现下面4种组合
 
 <ol>
 <li>OpenSSH客户端对OpenSSH服务器</li>
@@ -41,9 +40,7 @@ ssh tester@S_IP
 <li>SSH2客户端对OpenSSH服务器</li>
 </ol>
 假设客户端C试图使用用户tester登录服务器S，我们来看看各种组合下如何使用密钥登录:
-
-
-1. OpenSSH客户端对OpenSSH服务器，这是最简单和最常见的情况
+1.OpenSSH客户端对OpenSSH服务器，这是最简单和最常见的情况
 首先在C上操作
 {% codeblock lang:bash %}
 ssh-keygen -t rsa
@@ -64,7 +61,7 @@ ssh tester@S_IP
 {% endcodeblock %}
 不出意外，你再也不用输入密码了。
 
-2. SSH2客户端对SSH2服务器
+2.SSH2客户端对SSH2服务器
 这种情况也很简单，因为SSH2版本的ssh服务已经有了个新的工具ssh-keygen2。
 首先在C上操作
 {% codeblock lang:bash %}
@@ -72,7 +69,6 @@ ssh-keygen2 -t rsa
 {% endcodeblock %}
 注意，这将会在C上当前用户的目录的这个位置~/.ssh2/生成一对密钥id_rsa_2048_a和id_rsa_2048_a.pub
 你必须在~/.ssh2/目录下建立一个文件identification，并通过它来指定私钥
-
 {% codeblock lang:bash %}
 cd ~/.ssh2/
 vi identification
@@ -99,8 +95,7 @@ ssh tester@S_IP
 {% endcodeblock %}
 不出意外，这能够工作了。
 
-
-3. OpenSSH客户端对SSH2服务器
+3.OpenSSH客户端对SSH2服务器
 这种情况是最复杂的一种，网络上很多的免密码登录SSH的文章都没有涉及到这种，下面具体介绍一下应该如何配置
 首先在C上操作
 {% codeblock lang:bash %}
@@ -129,10 +124,10 @@ ssh tester@S_IP
 {% endcodeblock %}
 不出意外，这能够工作了。
 
-4. SSH2客户端对OpenSSH服务器
+4.SSH2客户端对OpenSSH服务器
 这种情况是最蛋疼的，应该非常少见吧？这意味你将用一台商业授权的服务器去管理一台开源的服务器？希望你的工作不用这么纠结，虽然这种情况的配置是非常简单的，基本和1一致，因为SSH2原生也支持SSH1，所以就请大家参见1的配置了。
 
-如果了解完了上面所说的一切，包括引用链接，你就完全够将SSH应用到工作的各个方面的，下面还会稍微透露一下，平时可能需要了解到的一些要点:
+　　如果了解完了上面所说的一切，包括引用链接，你就完全够将SSH应用到工作的各个方面的，下面还会稍微透露一下，平时可能需要了解到的一些要点:
 A.SSH2密钥和OpenSSH密钥的相互转换。
 {% codeblock lang:bash %}
 #OpenSSH转SSH2
