@@ -84,3 +84,6 @@ wget -c http://small-script.googlecode.com/files/debian-pptpd.tar.gz
 tar -zxf debian-pptpd.tar.gz
 sudo sh pptpd.sh
 {% endcodeblock %}
+
+最后，如果想要实现更便利的用户管理，请参见<a href="/articles/how-to-install-freeradius-on-ubuntu/" rel="newtar">在Ubuntu上安装FreeRADIUS服务</a>。
+
