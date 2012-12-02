@@ -95,7 +95,7 @@ disqus_short_name: lifeclaw
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-27144389-2
 
 # Facebook Like
 facebook_like: false
